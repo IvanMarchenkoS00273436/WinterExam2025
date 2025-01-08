@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinterExam2025"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Final Exam" Height="450" Width="800" MinHeight="450" MinWidth="800" MaxHeight="450" MaxWidth="800">
     <Grid>
+        <Label Content="Events" HorizontalAlignment="Left" Margin="71,20,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="218,28,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Tickets" HorizontalAlignment="Left" Margin="470,28,0,0" VerticalAlignment="Top"/>
 
+        <StackPanel Orientation="Horizontal" Margin="20,20,20,47" Height="300">
+            <ListBox Margin="30" MaxHeight="300" Width="300px"></ListBox>
+            <ListBox Margin="30" MaxHeight="300" Width="300px"></ListBox>
+        </StackPanel>
+        
+        <Label Content="Number of Tickets" HorizontalAlignment="Left" Margin="434,355,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="546,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button Content="Book" HorizontalAlignment="Left" Margin="699,357,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
