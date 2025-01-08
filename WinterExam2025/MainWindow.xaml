@@ -15,9 +15,9 @@
             <ListBox x:Name="EventsListBox" SelectionChanged="EventsListBox_SelectionChanged" Margin="30" MaxHeight="300" Width="300px"></ListBox>
             <ListBox x:Name="TicketsListBox" Margin="30" MaxHeight="300" Width="300px"></ListBox>
         </StackPanel>
-        
+
         <Label Content="Number of Tickets" HorizontalAlignment="Left" Margin="434,355,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="546,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Button Content="Book" HorizontalAlignment="Left" Margin="699,357,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="BookingTextBox" Text="1" HorizontalAlignment="Left" Margin="546,359,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="BookBtn" Content="Book" HorizontalAlignment="Left" Margin="693,358,0,0" VerticalAlignment="Top" Width="37" Click="BookBtn_Click"/>
     </Grid>
 </Window>

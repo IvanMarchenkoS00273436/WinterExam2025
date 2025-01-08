@@ -79,6 +79,7 @@ namespace WinterExam2025
             EventsListBox.Items.Add(event2);
         }
 
+        // Method for displaying tickets in the listbox
         private void EventsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedEvent = (Event)EventsListBox.SelectedItem;
@@ -86,6 +87,49 @@ namespace WinterExam2025
             { 
                 TicketsListBox.ItemsSource = selectedEvent.Tickets;
             }
+        }
+
+        // Method for booking tickets
+        private void BookBtn_Click(object sender, RoutedEventArgs e)
+        {
+            // Getting the amount of tickets to book and the selected ticket
+            var amountToBook = BookingTextBox.Text;
+            Ticket selectedTicket = (Ticket)TicketsListBox.SelectedItem;
+
+            // Checking if the amount to book is numeric and if the ticket is selected
+            if (isNumeric(amountToBook) && selectedTicket != null)
+            {
+                // Checking if there are enough tickets available
+                if (selectedTicket.AvailableTickets - Convert.ToInt32(amountToBook) >= 0)
+                {
+                    // Decreasing the amount of available tickets
+                    selectedTicket.AvailableTickets -= Convert.ToInt32(amountToBook);
+                    MessageBox.Show($"You have booked {amountToBook} tickets for {selectedTicket.Name}",
+                        "Booking successful", MessageBoxButton.OK, MessageBoxImage.Information);
+                    TicketsListBox.Items.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("Not enough tickets available", "Sorry", 
+                        MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a ticket and enter a valid number of tickets to book", 
+                    "Rewiew your choice", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        // Method for checking if the string is numeric
+        public bool isNumeric(string str)
+        {
+            foreach (char c in str)
+            {
+                if (!char.IsDigit(c))
+                    return false;
+            }
+            return true;
         }
     }
 }
