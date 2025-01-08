@@ -19,11 +19,53 @@ namespace WinterExam2025
         {
             InitializeComponent();
 
+            // Creating two events objects
             Event event1 = new Event() 
             {
                 Name = "Oasis Croke Park",
                 EventDate = new DateTime(2025, 06, 20),
-                TypeOfEvent = EventType.Music,
+                TypeOfEvent = EventType.Music
+            };
+
+            Event event2 = new Event()
+            {
+                Name = "Electric Picnic",
+                EventDate = new DateTime(2025, 08, 20),
+                TypeOfEvent = EventType.Music
+            };
+
+            //Creating two tickets objects
+            Ticket ticket1 = new Ticket()
+            {
+                Name = "Early Bird",
+                Price = 100m,
+                AvailableTickets = 100
+            };
+
+            Ticket ticket2 = new Ticket()
+            {
+                Name = "Platinium",
+                Price = 150m,
+                AvailableTickets = 100
+            };
+
+            // Creating two VIP tickets objects
+            VIPTicket vipTicket1 = new VIPTicket()
+            {
+                Name = "Ticket and Hotel Package",
+                Price = 150m,
+                AdditionalCost = 100m,
+                AdditionalExtras = "4* hotel",
+                AvailableTickets = 100,
+            };
+
+            VIPTicket vipTicket2 = new VIPTicket()
+            {
+                Name = "Weekend Ticket",
+                Price = 200m,
+                AdditionalCost = 100m,
+                AdditionalExtras = "with camping",
+                AvailableTickets = 100,
             };
         }
     }
