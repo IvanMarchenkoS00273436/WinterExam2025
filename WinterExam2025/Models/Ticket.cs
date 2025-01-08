@@ -12,5 +12,10 @@ namespace WinterExam2025.Models
         public string Name { get; set; }
         public decimal Price { get; set; }
         public int AvailableTickets { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Name} - {Price} [AVAILABLE - {AvailableTickets}]";
+        }
     }
 }

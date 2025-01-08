@@ -19,7 +19,7 @@ namespace WinterExam2025.Models
     {
         public string Name { get; set; }
         public DateTime EventDate { get; set; }
-        public List<Ticket> Tickets { get; set; }
+        public List<Ticket> Tickets { get; set; } = new List<Ticket>();
         public EventType TypeOfEvent { get; set; }
 
         // Compare method for sorting events by date
@@ -37,6 +37,11 @@ namespace WinterExam2025.Models
             {
                 return 0;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"{Name} - {TypeOfEvent}";
         }
     }
 }
