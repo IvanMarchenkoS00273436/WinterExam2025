@@ -131,5 +131,34 @@ namespace WinterExam2025
             }
             return true;
         }
+
+        // Method for searching events
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Getting the search request
+            string searchRequest = SearchTextBox.Text;
+            // Checking if the search request is not empty
+            if (searchRequest != "" && searchRequest != "Search")
+            {
+                // Checking if the search request matches the event name
+                if (event1.Name.Contains(searchRequest))
+                {
+                    EventsListBox.Items.Clear();
+                    EventsListBox.Items.Add(event1);
+                }
+                else if (event2.Name.Contains(searchRequest))
+                {
+                    EventsListBox.Items.Clear();
+                    EventsListBox.Items.Add(event2);
+                }
+                else if (searchRequest == "All")
+                {
+                    EventsListBox.Items.Clear();
+                    EventsListBox.Items.Add(event1);
+                    EventsListBox.Items.Add(event2);
+                }
+            }
+        }
+
     }
 }
